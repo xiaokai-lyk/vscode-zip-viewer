@@ -20,8 +20,8 @@ uikit.provideVSCodeDesignSystem().register(uikit.vsCodeButton(), uikit.vsCodeChe
 /**
  * @type {HTMLButtonElement}
  */
-var extract = document.getElementById("extract-select");
-extract.addEventListener("click", function () {
+var extract_selected = document.getElementById("extract-select");
+extract_selected.addEventListener("click", function () {
   /**
    * @type {NodeListOf<HTMLInputElement>}
    */
@@ -36,6 +36,20 @@ extract.addEventListener("click", function () {
     }
   }
   vscode.postMessage({ command: "selective-extract", uriList: JSON.stringify(selected) });
+});
+
+
+/**
+ * @type {HTMLButtonElement}
+ */
+var extract_all = document.getElementById("extract-all");
+extract_all.addEventListener("click", function () {
+  /**
+   * @type {NodeListOf<HTMLInputElement>}
+   */
+  var boxes = document.querySelectorAll("#target vscode-checkbox");
+  var files = [];for (var i = 0; i < boxes.length; i++)files.push(boxes[i].nextElementSibling.nextElementSibling.innerText);
+  vscode.postMessage({ command: "selective-extract", uriList: JSON.stringify(files) });
 });
 
 function displayFileList(files) {

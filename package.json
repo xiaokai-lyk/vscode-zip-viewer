@@ -259,7 +259,7 @@
     "@vscode/vsce": "^2.16.0",
     "gzip": "^0.1.0",
     "minimist-lite": "^2.2.1",
-    "webpack": "^5.75.0",
+    "webpack": "^5.99.8",
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {

@@ -77,6 +77,7 @@ export default class ZipEdit {
   <h1 id="loading">Loading zip file content...</h1>
   <div id="toolbar">
     <vscode-button id="extract-select">Extract Selected Files Only</vscode-button>
+    <vscode-button id="extract-all">Extract All Files</vscode-button>
   </div>
   <div id="target"></div>
   <hr>
